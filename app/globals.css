@@ -4,15 +4,40 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  
+}
+.home-container {
+  @apply relative pt-12 overflow-hidden min-h-screen;
+}
+
+#backgroundCarousel {
+  @apply absolute top-0 left-0 w-full h-screen -z-10;
+}
+
+#backgroundCarousel .carousel-item img {
+  @apply object-cover w-full h-full brightness-75;
+}
+
+.front-section {
+  @apply relative z-10 h-[80vh] flex items-center justify-center;
+}
+
+.overlay-content {
+  @apply bg-white bg-opacity-80 p-10 rounded-lg shadow-lg max-w-4xl;
+}
+
+.overlay-content img {
+  @apply h-80 w-auto object-cover rounded-lg shadow-md;
+}
+
+footer {
+  @apply bg-gray-800 text-white py-5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+   
   }
 }
 
