@@ -99,14 +99,14 @@ const Products: React.FC = () => {
           </thead>
           <tbody>
             {filteredProducts.length > 0 ? (
-              filteredProducts.map((element, index) => (
-                <tr key={element._id} className="border-t">
+              filteredProducts.map((product, index) => (
+                <tr key={product._id} className="border-t">
                   <td className="p-4">{index + 1}</td>
-                  <td className="p-4">{element.ProductName}</td>
-                  <td className="p-4">{element.ProductPrice}</td>
-                  <td className="p-4">{element.ProductBarcode}</td>
+                  <td className="p-4">{product.ProductName}</td>
+                  <td className="p-4">{product.ProductPrice}</td>
+                  <td className="p-4">{product.ProductBarcode}</td>
                   <td className="p-4">
-                    <Link href={`/updateproduct/${element._id}`} className="btn btn-primary">
+                    <Link href={`/updateproduct/${product._id}`} className="btn btn-primary">
                       
                       <i className="fa-solid fa-pen-to-square"></i>Edit                      
                     </Link>
@@ -115,7 +115,7 @@ const Products: React.FC = () => {
                     <td className="p-4">
                       <button
                         className="text-red-500 hover:underline"
-                        onClick={() => deleteProduct(element._id)}
+                        onClick={() => deleteProduct(product._id)}
                       >
                         <i className="fa-solid fa-trash"></i> Delete
                       </button>

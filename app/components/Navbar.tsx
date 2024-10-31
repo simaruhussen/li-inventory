@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white py-4 px-6">
+    <nav className="bg-gray-900 text-white py-4 px-6 ">
       <div className="container mx-auto flex items-center justify-between">
         {!isAuthPage && (
           <div className="relative">
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
         <Link href="/home" className="text-2xl font-bold ml-4">Inventory Management</Link>
 
         <div className="flex space-x-4">
-          <Link href="/home" className={`text-lg ${pathname === '/home' ? 'text-blue-400' : 'hover:text-gray-400'}`}>Home</Link>
+          <Link href="/hom" className={`text-lg ${pathname === '/home' ? 'text-blue-400' : 'hover:text-gray-400'}`}>Home</Link>
           <Link href="/products" className={`text-lg ${pathname === '/products' ? 'text-blue-400' : 'hover:text-gray-400'}`}>Products</Link>
           <Link href="/about" className={`text-lg ${pathname === '/about' ? 'text-blue-400' : 'hover:text-gray-400'}`}>About</Link>
           
