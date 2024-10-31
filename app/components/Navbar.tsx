@@ -56,26 +56,36 @@ const Navbar: React.FC = () => {
         {!isAuthPage && (
           <div className="relative">
           <button
-            className="nav-item px-4 py-2 text-white bg-gray-800 rounded-lg hover:bg-gray-400"
-            type="button"
-            onClick={toggleDropdown} // Toggle the dropdown visibility on click
-          >
-            Options
-          </button>
+  className="inline-flex items-center px-4 py-2 text-gray-800 border border-gray-300 rounded-lg bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-150 ease-in-out text-lg"
+  type="button"
+  onClick={toggleDropdown} // Toggle the dropdown visibility on click
+>
+  Options
+  <svg
+    className="w-5 h-5 ml-1 -mr-1"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15l-3-3h6l-3 3zm0-6l3 3H9l3-3z" />
+  </svg>
+</button>
+
     
           {isOpen && (
             <ul className="relative bg-gray-800 rounded-lg shadow-lg mt-2 p-2 right-0 z-10">
               <li className="py-1 px-4 text-white">Role: {role}</li>
               {role === 'Super Admin' && (
                 <li className="py-1 px-4">
-                  <Link href="/user-management" className="text-white hover:text-gray-400">
+                  <Link href="/rolemanagment" className="text-white hover:text-gray-400">
                     User List
                   </Link>
                 </li>
               )}
               {role === 'User' && (
                 <li className="py-1 px-4">
-                  <Link href="/request-admin" className="text-white hover:text-gray-400">
+                  <Link href="/requestadmin" className="text-white hover:text-gray-400">
                     Request Admin Role
                   </Link>
                 </li>
@@ -99,7 +109,7 @@ const Navbar: React.FC = () => {
           
           {role === 'Super Admin' && (
             <div className="relative">
-              <Link href="/admin-notifications" className="text-lg flex items-center hover:text-gray-400">
+              <Link href="/adminnotification" className="text-lg flex items-center hover:text-gray-400">
                 <FaBell size={24} />
                 {notificationCount > 0 && (
                   <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full px-2 py-1 text-xs">{notificationCount}</span>

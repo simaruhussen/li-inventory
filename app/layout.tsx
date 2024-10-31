@@ -2,6 +2,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
 import NavbarContainer from './components/NavbarContainer'; // Import your new NavbarContainer
 
 // Load the Inter font at the module scope
