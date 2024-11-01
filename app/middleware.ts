@@ -1,18 +1,18 @@
-// // middleware.ts
-// import { NextResponse } from 'next/server';
-// import type { NextRequest } from 'next/server';
 
-// export function middleware(req: NextRequest) {
-//   const token = req.cookies.get('token')?.value;
+ import { NextResponse } from 'next/server';
+ import type { NextRequest } from 'next/server';
 
-//   if (!token) {
-//     const url = new URL('/login', req.url);
-//     return NextResponse.redirect(url);
-//   }
+export function middleware(req: NextRequest) {
+   const token = req.cookies.get('token')?.value;
 
-//   return NextResponse.next();
-// }
+   if (!token) {
+     const url = new URL('/login', req.url);
+     return NextResponse.redirect(url);
+   }
 
-// export const config = {
-//   matcher: ['/home/:path*'], // Protect the /home route and any sub-routes
-// };
+   return NextResponse.next();
+ }
+
+export const config = {
+   matcher: ['/home/:path*'], 
+ };

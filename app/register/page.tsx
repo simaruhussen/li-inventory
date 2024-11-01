@@ -32,7 +32,7 @@ const Register: React.FC = () => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        router.push('/login'); // Redirect to login after successful registration
+        router.push('/login'); 
       } else {
         const errorData = await response.json();
         setError(errorData.message || errorData.errors[0].msg || 'Registration failed. Please try again.');
@@ -108,7 +108,7 @@ const Register: React.FC = () => {
 
         <div className="mt-4 text-center">
           Already have an account?{' '}
-          <a href="/" className="text-blue-500 hover:underline">
+          <a href="/login" className="text-blue-500 hover:underline">
             Log in here.
           </a>
         </div>

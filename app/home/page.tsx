@@ -1,13 +1,13 @@
-// // app/home/page.tsx
-// import { headers } from 'next/headers';
-// import { redirect } from 'next/navigation';
 
-// export default function HomePage() {
-//   const token = headers().get('cookie')?.includes('token');
+ import { headers } from 'next/headers';
+ import { redirect } from 'next/navigation';
 
-//   if (!token) {
-//     redirect('/login'); // Redirect unauthenticated users to the login page
-//   }
+ export default function HomePage() {
+   const token = headers().get('cookie')?.includes('token');
 
-//   return <div>Welcome to the Home Page!</div>;
-// }
+  if (!token) {
+     redirect('/login'); 
+   }
+
+  return <div>Welcome to the Home Page!</div>;
+ }

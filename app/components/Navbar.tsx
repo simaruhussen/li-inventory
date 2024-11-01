@@ -10,7 +10,7 @@ import Link from 'next/link';
 const Navbar: React.FC = () => {
   const [notificationCount, setNotificationCount] = useState<number>(0);
   const router = useRouter();
-  const pathname = usePathname(); // Get the current pathname
+  const pathname = usePathname(); 
   const role = typeof window !== 'undefined' ? localStorage.getItem('role') : null;
 
   const handleLogout = () => {

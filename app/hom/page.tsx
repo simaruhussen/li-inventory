@@ -1,5 +1,5 @@
 "use client"
-// pages/Home.tsx
+
 
 import React from 'react';
 import Link from 'next/link';
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <p className="text-lg mb-4">
               Manage your inventory effortlessly with our intuitive platform designed for businesses of all sizes.
             </p>
-            {/* CTA Button */}
+          
             
               <Link href="/products" className="inline-block bg-blue-500 text-white py-2 px-4 rounded-md font-bold hover:bg-blue-600 transition duration-300">
                 Get Started

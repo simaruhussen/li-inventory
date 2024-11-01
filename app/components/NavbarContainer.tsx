@@ -1,7 +1,7 @@
 // app/components/NavbarContainer.tsx
 "use client";
 import { usePathname } from 'next/navigation';
-import Navbar from './Navbar'; // Assuming your Navbar component is in the same directory
+import Navbar from './Navbar'; 
 
 const NavbarContainer = () => {
   const pathname = usePathname();

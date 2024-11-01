@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -26,11 +27,11 @@ const Login: React.FC = () => {
       if (response.ok) {
         const data = await response.json();
 
-        // Store token and role in localStorage
+        
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.role);
 
-        router.push('/hom'); // Redirect to the home page upon successful login
+        router.push('/hom'); 
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Invalid credentials');
@@ -81,6 +82,10 @@ const Login: React.FC = () => {
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
+        <div className="mt-3 text-center">
+            Don't have an account?
+            <Link href="/register" className="text-blue-500 hover:underline"> Register here.</Link>
+          </div>
       </div>
     </div>
   );

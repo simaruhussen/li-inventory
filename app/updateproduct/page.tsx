@@ -13,7 +13,7 @@ export default function UpdateProduct() {
   const router = useRouter();
   const { id } = useParams();
 
-  // Fetch the product details on component mount
+  
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -41,7 +41,7 @@ export default function UpdateProduct() {
     getProduct();
   }, [id]);
 
-  // Handle the form submission to update the product
+  
   const updateProduct = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
